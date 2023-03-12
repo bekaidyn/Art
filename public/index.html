@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/spinner.css">
+    <title>OpenAI Art Generator</title>
+    <script src="js/main.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        ul.topnav li {
+            float: left;
+        }
+
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.topnav li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        ul.topnav li a.active {
+            background-color: #04AA6D;
+        }
+
+        ul.topnav li.right {
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="topnav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="index.html">AI painter</a></li>
+
+        </ul>
+    </header>
+    <main>
+        <section class="showcase">
+            <form id="image-form">
+                <h1>Суретті түсіндір</h1>
+                <div class="form-control">
+                    <input type="text" id="prompt" placeholder="Суреттің аты" />
+                </div>
+                <div class="form-control">
+                    <select name="size" id="size">
+                        <option value="small">Кішкене</option>
+                        <option value="medium">Орташа</option>
+                        <option value="large">Үлкен</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Сурет салу</button>
+            </form>
+        </section>
+        <section class="image">
+            <div class="image-container">
+                <h2 class="msg"></h2>
+                <img src="" alt="" id="image" />
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

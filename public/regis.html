@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Registration</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/registration.css">
+
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        ul.topnav li {
+            float: left;
+        }
+
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.topnav li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        ul.topnav li a.active {
+            background-color: #04AA6D;
+        }
+
+        ul.topnav li.right {
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="topnav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a style="color:aliceblue" data-bs-toggle="modal" data-bs-target="#myModal">AI painter</a>
+            </li>
+            <li class="right" class="active"><a style="color:aliceblue" data-bs-toggle="modal"
+                    data-bs-target="#myModal">Login</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <form>
+                    <br />
+                    <legend>Resestration</legend>
+
+                    <br />
+                    <h2>Name *</h2>
+                    <input type="text" id="name" class="form-control" placeholder="User Name">
+                    <br />
+                    <h2>Country *</h2>
+                    <input type="text" id="country" class="form-control" placeholder="Country">
+                    <br />
+                    <input type="text" id="email" class="form-control" placeholder="Email">
+                    <br />
+                    <br />
+                    <input type="text" id="password" class="form-control" placeholder="Password">
+                    <br />
+                    <br />
+                    <button type="submit" id="register" class="btn btn-secondary"><a class="text-light"
+                            href="mod.html">Register</a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="wrapper">
+                        <form class="form" action="index.html" method="POST ">
+                            <label for=" user">
+                                Username or email address
+
+                                <input type="email" class="field" id="user" required="" name="email" autofocus
+                                    placeholder="Enter your Email">
+                            </label>
+                            <label for="password">
+                                Password <span><a href="#">Forgot password?</a></span>
+                                <input class="field" type="password" id="password" required="" name="Password"
+                                    placeholder="Password">
+                            </label>
+
+
+
+                            <div class="col-md-12">
+                                <div class="single-form">
+                                    <button class="w3-button w3-block w3-green"> Өту</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="create-account">
+                            <p>
+                                New to GitHub? <a href="regis.html" class="text-right">Create an account.</a>
+                            </p>
+                        </div>
+                        <footer class="footer">
+                            <ul>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Security</a></li>
+                                <li><a href="#">Contact Github</a></li>
+                            </ul>
+                        </footer>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="registration.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

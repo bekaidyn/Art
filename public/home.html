@@ -1,0 +1,485 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/log.css">
+    <link rel="stylesheet" href="css/spinner.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>OpenAI Art Generator</title>
+    <script src="js/main.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul.topnav {
+
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            /* background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%; */
+        }
+
+        ul.topnav li {
+
+            float: left;
+        }
+
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.topnav li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        ul.topnav li a.active {
+            background-color: #04AA6D;
+        }
+
+        ul.topnav li.right {
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body class="w3-light-grey">
+    <ul class="topnav">
+        <li><a class="active" href="home.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html">AI painter</a></li>
+        <!-- <li><a style="color:aliceblue" data-bs-toggle="modal" data-bs-target="#myModal">AI painter</a>
+        </li> -->
+        <!-- <li class="right"><a style="color:aliceblue" data-bs-toggle="modal" data-bs-target="#myModal">Login</a></li> -->
+    </ul>
+
+    <!-- w3-content defines a container for fixed size centered content, 
+    and is wrapped around the whole page content, except for the footer in this example -->
+    <div class="w3-content" style="max-width:100%">
+
+        <!-- Header -->
+        <!-- <header class="w3-container w3-center w3-padding-48 w3-white">
+                <h1 class="w3-xxxlarge"><b>OpenAI</b></h1>
+                <h6>Welcome to <span class="w3-tag">AI</span></h6>
+            </header> -->
+
+        <!-- Image header -->
+        <header class="w3-display-container w3-wide" id="home">
+            <img class="w3-image"
+                src="https://assets.website-files.com/61554cf069663530fc823d21/637e604b3e538d4b36004276_image.webp"
+                style="width: 100%;" alt="Fashion Blog" width="1600" height="1060">
+            <div class="w3-display-left w3-padding-large">
+                <h1 class="w3-text-white">Open art</h1>
+                <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>AI</b></h1>
+                <h6><button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom"
+                        data-bs-toggle="modal" data-bs-target="#myModal">SUBSCRIBE</button></h6>
+            </div>
+        </header>
+
+        <!-- Grid -->
+        <div class="w3-row w3-padding w3-border">
+
+            <!-- Blog entries -->
+            <div class="w3-col l8 s12">
+
+                <!-- Blog entry -->
+                <div class="w3-container w3-white w3-margin w3-padding-large">
+                    <div class="w3-center">
+                        <h3>Careers</h3>
+                        <h5>Title description, <span class="w3-opacity">Feb 2, 2023</span></h5>
+                    </div>
+                    <div class="w3-justify">
+                        <img src="https://techcrunch.com/wp-content/uploads/2019/07/MSFT-Nadella-OpenAI-Altman-09-official-joint-pic.jpg"
+                            alt="Girl Hat" style="width:100%" class="w3-padding-16">
+                        <p><strong>Careers</strong> Our team is dedicated to creating the best image generating AI
+                            on
+                            the market. If you are a problem-solver with a passion for machine learning and a desire
+                            to
+                            work on cutting-edge technology, we want to hear from you. We have a variety of open
+                            positions in research, development, and more. Come be a part of our team and help us
+                            change
+                            the way the world thinks about AI and image generation.</p>
+                        <!-- <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco.</p> -->
+                        <p class="w3-left"><button class="w3-button w3-white w3-border"
+                                onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button>
+                        </p>
+                        <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction(' demo1')"
+                                id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
+                        <p class="w3-clear"></p>
+                        <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+                            <hr>
+                            <div class="w3-col l2 m3">
+                                <img src="https://www.w3schools.com/w3images/girl_hat.jpg" style="width:90px;">
+                            </div>
+                            <div class="w3-col l10 m9">
+                                <h4>George <span class="w3-opacity w3-medium">May 3, 2015, 6:32 PM</span></h4>
+                                <p>Great blog post! Following</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- Blog entry -->
+                <div class="w3-container w3-white w3-margin w3-padding-large">
+                    <div class="w3-center">
+                        <h3>How It Works</h3>
+                        <h5>Title description, <span class="w3-opacity">Jan 23, 2023</span></h5>
+                    </div>
+                    <div class="w3-justify">
+                        <img src="image/How.png" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+                        <p><strong>How It Works</strong></p>
+                        <p>Our image generating AI is designed to be user-friendly and accessible to everyone. No
+                            matter
+                            your level of experience or expertise, you can easily create amazing images with our
+                            tool.
+                            Simply enter your prompt and let our AI do the rest – it's as easy as that!</p>
+                        <p class="w3-left"><button class="w3-button w3-white w3-border"
+                                onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button>
+                        </p>
+                        <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Replies
+                                     </b> <span class="w3-tag w3-white">2</span></button></p>
+                        <p class="w3-clear"></p>
+                        <!-- Example of comment field -->
+                        <div id="demo2" style="display:none">
+                            <div class="w3-row">
+                                <hr>
+                                <div class="w3-col l2 m3">
+                                    <img src="https://www.w3schools.com/w3images/girl_train.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Amber <span class="w3-opacity w3-medium">Jan 26, 2023, 10:52 PM</span></h4>
+                                    <p>Amazing !!<br>
+                                </div>
+                            </div>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="https://www.w3schools.com/w3images/girl.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Angie <span class="w3-opacity w3-medium">Jan 24, 2023, 9:12 PM</span></h4>
+                                    <p>Love AI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog entry -->
+                <div class="w3-container w3-white w3-margin w3-padding-large">
+                    <div class="w3-center">
+                        <h3>Imagery</h3>
+                        <h5>Title description, <span class="w3-opacity">April 7, 2016</span></h5>
+                    </div>
+                    <div class="w3-justify">
+                        <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Runway" style="width:100%"
+                            class="w3-padding-16">
+                        <p><strong>Imagery</strong></p>
+                        <p>Many mechanisms for creating AI art have been developed, including procedural
+                            'rule-based'
+                            generation of images using mathematical patterns, algorithms which simulate brush
+                            strokes
+                            and other painted effects, and artificial intelligence or deep learning algorithms such
+                            as
+                            generative adversarial networks (GANs) and transformers.</p>
+                        <p class="w3-left"><button class="w3-button w3-white w3-border"
+                                onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button>
+                        </p>
+                        <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')"><b>Replies
+                                     </b> <span class="w3-tag w3-white">3</span></button></p>
+                        <p class="w3-clear"></p>
+                        <!-- Example of comment field -->
+                        <div id="demo3" style="display:none">
+                            <hr>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="https://www.w3schools.com/w3images/team1.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Jane <span class="w3-opacity w3-medium">Feb 10, 2023, 7:22 PM</span></h4>
+                                    <p>That was a great runway show! Thanks for everything.</p>
+                                </div>
+                            </div>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="https://www.w3schools.com/w3images/team1.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>John <span class="w3-opacity w3-medium">Feb 8, 2023, 10:32 PM</span></h4>
+                                    <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                </div>
+                            </div>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="https://www.w3schools.com/w3images/team1.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Anja <span class="w3-opacity w3-medium">Feb 7, 2023, 9:12 PM</span></h4>
+                                    <p>Cant wait for the runway to start!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END BLOG ENTRIES -->
+            </div>
+            <!-- About/Information menu -->
+            <div class="w3-col l4">
+                <!-- About Card -->
+                <div class="w3-white w3-margin">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Jane" style="width:100%" class="w3-grayscale">
+                    <div class="w3-container w3-black">
+                        <h4>Development</h4>
+                        <p>Additional functionalities are under development and may improve various applications or
+                            enable new ones – such as "Textual Inversion" which refers to enabling the use of
+                            user-provided concepts (like an object or a style) learned from few images. With textual
+                            inversion, novel personalized art can be generated from the associated word(s) (the
+                            keywords
+                            that have been assigned to the learned, often abstract, concept)[43][44] and model
+                            extensions/fine-tuning (see also: DreamBooth).</p>
+                    </div>
+                </div>
+                <hr>
+                <!-- Posts -->
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Popular Posts</h4>
+                    </div>
+                    <ul class="w3-ul w3-hoverable w3-white">
+                        <li class="w3-padding-16">
+                            <img src="https://www.w3schools.com/w3images/avatar_smoke.jpg" alt="Image"
+                                class="w3-left w3-margin-right" style="width:50px">
+                            <span class="w3-large">Denim</span>
+                            <br>
+                            <span>Sed mattis nunc</span>
+                        </li>
+                        <li class="w3-padding-16">
+                            <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="Image"
+                                class="w3-left w3-margin-right" style="width:50px">
+                            <span class="w3-large">Sweaters</span>
+                            <br>
+                            <span>Praes tinci sed</span>
+                        </li>
+                        <li class="w3-padding-16">
+                            <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="Image"
+                                class="w3-left w3-margin-right" style="width:50px">
+                            <span class="w3-large">Workshop</span>
+                            <br>
+                            <span>Ultricies congue</span>
+                        </li>
+                        <li class="w3-padding-16">
+                            <img src="https://www.w3schools.com/w3images/avatar_smoke.jpg" alt="Image"
+                                class="w3-left w3-margin-right w3-sepia" style="width:50px">
+                            <span class="w3-large">Trends</span>
+                            <br>
+                            <span>Lorem ipsum dipsum</span>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <!-- Advertising -->
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Advertise</h4>
+                    </div>
+                    <div class="w3-container w3-white">
+                        <div class="w3-container w3-display-container w3-light-grey w3-section" style="height:200px">
+                            <span class="w3-display-middle">Your AD Here</span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- Tags -->
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Tags</h4>
+                    </div>
+                    <div class="w3-container w3-white">
+                        <p>
+                            <span class="w3-tag w3-black w3-margin-bottom">Fashion</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Hats</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">Norway</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sweaters</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">Deals</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">Accessories</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Jeans</span> <span
+                                class="w3-tag w3-light-grey w3-small w3-margin-bottom">Trends</span>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <!-- Inspiration -->
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Inspiration</h4>
+                    </div>
+                    <div class="w3-row-padding w3-white">
+                        <div class="w3-col s6">
+                            <p><img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jeans" style="width:100%">
+                            </p>
+                            <p><img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jeans" style="width:100%">
+                            </p>
+                        </div>
+                        <div class="w3-col s6">
+                            <p><img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jeans" style="width:100%">
+                            </p>
+                            <p><img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jeans" style="width:100%">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Follow Me</h4>
+                    </div>
+                    <div class="w3-container w3-xlarge w3-padding">
+                        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                        <i class="fa fa-instagram w3-hover-opacity"></i>
+                        <i class="fa fa-snapchat w3-hover-opacity"></i>
+                        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                        <i class="fa fa-twitter w3-hover-opacity"></i>
+                        <i class="fa fa-linkedin w3-hover-opacity"></i>
+                    </div>
+                </div>
+                <hr>
+                <!-- Subscribe -->
+                <!-- <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Subscribe</h4>
+                    </div>
+                    <div class="w3-container w3-white">
+                        <p>Enter your e-mail below and get notified on the latest blog posts.</p>
+                        <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%">
+                        </p>
+                        <p><button type="button" onclick="document.getElementById('subscribe').style.display='block'"
+                                class="w3-button w3-block w3-red">Subscribe</button></p>
+                    </div>
+                </div> -->
+                <!-- END About/Intro Menu -->
+            </div>
+            <!-- END GRID -->
+        </div>
+        <!-- END w3-content -->
+    </div>
+    <!-- Subscribe Modal -->
+    <div id="subscribe" class="w3-modal w3-animate-opacity">
+        <div class="w3-modal-content" style="padding:32px">
+            <div class="w3-container w3-white">
+                <i onclick="document.getElementById('subscribe').style.display='none'"
+                    class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+                <h2 class="w3-wide">SUBSCRIBE</h2>
+                <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+                <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom"
+                    onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="w3-container w3-dark-grey" style="padding:32px">
+        <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i
+                class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    </footer>
+    <script>
+        // Toggle between hiding and showing blog replies/comments
+        document.getElementById("myBtn").click();
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        function likeFunction(x) {
+            x.style.fontWeight = "bold";
+            x.innerHTML = "✓ Liked";
+        }
+    </script>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="wrapper">
+                        <form class="form" action="subscrib.html" method="POST ">
+                            <label for=" user">
+                                Username or email address
+
+                                <input type="email" class="field" id="user" required="" name="email" autofocus
+                                    placeholder="Enter your Email">
+                            </label>
+                            <label for="password">
+                                Password <span><a href="#">Forgot password?</a></span>
+                                <input class="field" type="password" id="password" required="" name="Password"
+                                    placeholder="Password">
+                            </label>
+                            <div class="col-md-12">
+                                <div class="single-form">
+                                    <button class="w3-button w3-block w3-green"> Өту</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="create-account">
+                            <p>
+                                New to GitHub? <a href="regis.html" class="text-right">Create an account.</a>
+                            </p>
+                        </div>
+                        <footer class="footer">
+                            <ul>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Security</a></li>
+                                <li><a href="#">Contact Github</a></li>
+                            </ul>
+                        </footer>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://training.javatpoint.com/cmn/front/assets/js/plugins.min.js"></script>
+</body>
+
+</html>
